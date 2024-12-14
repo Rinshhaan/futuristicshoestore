@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shop | Next-Level Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+</head>
+<body>
+    <div id="hologram-popup">
+        <div class="hologram-container">
+            <div class="hologram">
+                <img src="imagess/img1.png" alt="Holographic Shoe" id="hologram-shoe">
+                <div class="glow-effect"></div>
+            </div>
+            <h1 class="hologram-text">Welcome to Future Footwear!</h1>
+        </div>
+    </div>
+
+    <header id="main-header">
+        <div class="logo">Future Footwear</div>
+        <nav class="nav-links">
+            <a href="#collections">Collections</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1 class="hero-title">Step Into the Future</h1>
+            <p class="hero-tagline">Explore our exclusive collection of futuristic footwear.</p>
+            <a href="#collections" class="cta-button">Shop Now</a>
+        </section>
+
+        <section id="collections">
+            <h2>Featured Shoes</h2>
+            <div class="hologram-grid">
+                <!-- Each shoe will appear in a holographic display -->
+                <div class="hologram-shoe-card">
+                    <div class="hologram-effect">
+                        <img src="imagess/img4 (2).jpg" alt="Shoe 1">
+                    </div>
+                    <h3>Sleek Runner</h3>
+                    <p>$150.00</p>
+                </div>
+                <div class="hologram-shoe-card">
+                    <div class="hologram-effect">
+                        <img src="imagess/img4 (1).jpg" alt="Shoe 2">
+                    </div>
+                    <h3>Quantum Air</h3>
+                    <p>$180.00</p>
+                </div>
+                <div class="hologram-shoe-card">
+                    <div class="hologram-effect">
+                        <img src="imagess/img4 (3).jpg" alt="Shoe 3">
+                    </div>
+                    <h3>Lightstride</h3>
+                    <p>$200.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Hologram popup animation
+        window.onload = function() {
+            const hologram = document.querySelector(".hologram");
+            const hologramText = document.querySelector(".hologram-text");
+
+            gsap.timeline()
+                .from(hologram, { opacity: 0, y: -50, duration: 1.5, ease: "power3.out" })
+                .from(hologramText, { opacity: 0, y: 50, duration: 1, ease: "power3.out" }, "-=1");
+
+            setTimeout(() => {
+                document.getElementById("hologram-popup").style.display = "none";
+            }, 5000);
+        };
+
+        // Hologram grid animations
+        gsap.from(".hologram-shoe-card", {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.2
+        });
+    </script>
+</body>
+</html>

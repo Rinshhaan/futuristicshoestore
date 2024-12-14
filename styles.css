@@ -1,0 +1,218 @@
+/* General Reset */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #1d1f21, #0d0e10);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Hologram Popup */
+#hologram-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+}
+.hologram-container {
+    text-align: center;
+}
+.hologram {
+    position: relative;
+    display: inline-block;
+    animation: hologram-glow 2s infinite alternate;
+}
+#hologram-shoe {
+    width: 180px;
+    animation: rotate 12s infinite linear;
+}
+.glow-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 6px solid rgba(0, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: pulse 2.5s infinite;
+    
+}
+.hologram-text {
+    font-size: 2.5rem;
+    color: #00ffff;
+    margin-top: 20px;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+@keyframes hologram-glow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* Header */
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #1d1f21;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ffff;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #00ffff;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.hero-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.cta-button {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #00c6ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.cta-button:hover {
+    background: #0072ff;
+}
+
+/* Hologram Grid */
+.hologram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 50px;
+}
+.hologram-shoe-card {
+    background: rgba(13, 14, 16, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.hologram-shoe-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 255, 255, 0.8);
+}
+.hologram-effect {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+    animation: hologram-effect 2s infinite alternate;
+    overflow: hidden;
+}
+
+
+.hologram-effect img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: none;
+    animation: 3s infinite;
+}
+.hologram-shoe-card:hover .hologram-effect {
+    background: rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 50px rgba(0, 255, 255, 0.5);
+}
+.hologram-shoe-card h3 {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin-top: 15px;
+    transition: color 0.3s;
+}
+.hologram-shoe-card p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+.hologram-shoe-card:hover h3, .hologram-shoe-card:hover p {
+    color: #00ffcc;
+}
+@keyframes hologram-effect {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
