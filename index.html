@@ -32,7 +32,7 @@
       <div class="px-5 xl:px-12 py-6 flex w-full items-center">
         <a class="text-3xl font-bold font-heading" href="#">
           <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-          Logo Here.
+          FashionFiesta 
         </a>
         <!-- Nav Links -->
         <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
@@ -124,6 +124,31 @@
                 </div>
             </div>
         </section>
+    
+       <section style="padding: 15px;">
+        <div id="carouselExampleControls" class="carousel slide" style="box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+    border-radius: 25px;" data-bs-ride="carousel">
+          <div class="carousel-inner" style="border-radius: 25px">
+            <div class="carousel-item active">
+              <img src="imagess/slideshowshoe (1).webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagess/slideshowshoe (3).webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagess/slideshowshoe (2).webp" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>      
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
     <script>
@@ -144,7 +169,6 @@
         // Hologram grid animations
         gsap.from(".hologram-shoe-card", {
             opacity: 0,
-            scale: 0.8,
             duration: 1,
             ease: "power3.out",
             stagger: 0.2
